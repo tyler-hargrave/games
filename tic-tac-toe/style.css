@@ -1,0 +1,86 @@
+* {
+ box-sizing: border-box;
+ font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+ text-align: center;
+}
+
+h3,
+h4 {
+ padding: 0px;
+ margin: 0px;
+}
+.gameboard {
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr;
+}
+
+.results, .players {
+ display: flex;
+ flex-wrap: wrap;
+ padding: 0px;
+ margin: 0pxs;
+ align-items: center;
+ justify-content: center;
+}
+
+#subGrid {
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr;
+ grid-template-rows: 1fr 1fr 1fr;
+ justify-content: start;
+ align-content: start;
+ border: solid black 0.25rem;
+ padding: 0px;
+ margin: 0pxs;
+}
+
+.square {
+ border: solid black 0.25rem;
+ display: flex;
+ padding: 0px;
+ margin: 0pxs;
+ align-items: center;
+ justify-content: center;
+}
+
+.psquare {
+ border: solid black 0.25rem;
+ display: flex;
+ width: 20%;
+ padding: 0px;
+ margin: 0pxs;
+ align-items: center;
+ justify-content: center;
+ min-width: 3rem;
+}
+
+#playAgain {
+ background-color: black;
+ color: white;
+ border: none;
+ border-radius: 50%;
+ font-size: 2rem;
+ width: 10rem;
+ height: 10rem;
+}
+
+.break {
+ width: 100%;
+ flex-basis: 100%;
+ height: 0;
+}
+.break1 {
+ width: 10%;
+ flex-basis: 10%;
+ height: 10%;
+}
+
+@media only screen and (max-width: 600px) {
+ .gameboard {
+ display: grid;
+ grid-template-columns: 1fr;
+ grid-template-rows: 1fr;
+}
