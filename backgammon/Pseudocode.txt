@@ -1,0 +1,67 @@
+
+function new_game(){
+ Reset all game variables
+ Score = 0
+ Checkers in right places
+ CurrentPlayer = undefined
+ Update Board
+}
+
+function roll_dice(){
+ Roll both dice (randomly for 3 econds and stop)
+ set timeout and loop for 3 seconds
+
+ First Roll (player is undefined)
+ Dice 1 is player 1 and Dice 2 is player 2
+ Higher goes first
+ Alert (Player X it is your turn)
+
+ TotalDice = 2 (4 if double)
+ CurrentDice = 1
+ RunTurn
+ Update Board for Available Moves
+
+}
+
+function RunTurn (){
+ for each dice (and if doubles then 4 total)
+ do available moves, check available moves,clickavailable moves
+ if no dice left
+ SwitchPlayer
+}
+
+
+AvailableMoves {
+ Look at game board
+ For each box that has currentPlayer Squares
+ Based on the Dice values
+ Can they make the move
+ highlight checker
+}
+
+ClickAvailableMove {
+ Look at game board
+ For the current checker
+ What the the spots it can move to (i.e. both dice)
+ Highlight squares
+}
+Move Complete {
+ Update board
+ CurrentDice++
+ RunTurn
+}
+
+function SwitchPlayer {
+   switch player
+   update score
+}
+
+function update score {
+   calculate spaces left
+   if 0 then we have a winner! 
+ }
+   
+   
+
+
+

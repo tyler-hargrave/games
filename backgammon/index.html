@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+   name="viewport"
+   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+  />
+
+  <!-- Bootstrap -->
+  <link
+   rel="stylesheet"
+   href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css"
+   integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+   crossorigin="anonymous"
+  />
+
+  <link rel="stylesheet" href="css/main.css" />
+  <title>Back 2 Gamin</title>
+ </head>
+ <body>
+  <header>
+   <h1>Back 2 Gamin'</h1>
+  </header>
+  <div id="landing" class="content">
+   <h1>BACK</h1>
+   <h1>2</h1>
+   <h1>GAMIN'</h1>
+   <div><img src="img/landing.png" /></div>
+  </div>
+  <div id="setup" class="content">
+   <div class="right"><h4>Player 1:</h4></div>
+   <div class="left">
+    <i id="personP1" class="fa-solid fa-circle"></i>
+    <input id="inputP1" />
+   </div>
+   <div class="right"><h4>Player 2:</h4></div>
+   <div class="left">
+    <i id="computerP2" class="fa-solid fa-circle"></i>
+    Frank (the computer)
+    <br />
+    <i id="personP2" class="fa-solid fa-circle"></i>
+    <input id="inputP2" />
+   </div>
+   <div class="full">
+    <button type="button" class="btn btn-primary" id="startGame">Start Game</button>
+   </div>
+  </div>
+  <div id="game" class="content">
+   <div id="players">
+    <div class="playerDetails" id="playerDetails1">
+     <h3>
+      <i id="playerCircle1" class="fa-solid fa-circle"></i> <br /><span id="playerName1"></span>
+     </h3>
+     Moves Remaining: <span id="movesRemaining1"></span>
+     <h3><i id="crown1" class="fa-solid fa-crown"></i></h3>
+    </div>
+    <div class="playerDetails" id="playerDetails2">
+     <h3>
+      <i id="playerCircle2" class="fa-solid fa-circle"></i><br />
+      <span id="playerName2"></span>
+     </h3>
+     Moves Remaining: <span id="movesRemaining2"></span>
+     <h3><i id="crown2" class="fa-solid fa-crown"></i></h3>
+    </div>
+   </div>
+   <div id="board">
+    <div class="green-down down square" id="space12"></div>
+    <div class="yellow-down down square" id="space11"></div>
+    <div class="green-down down square" id="space10"></div>
+    <div class="yellow-down down square" id="space9"></div>
+    <div class="green-down down square" id="space8"></div>
+    <div class="yellow-down down square" id="space7"></div>
+    <div id="space0" class="penalty"></div>
+
+    <div class="green-down down square" id="space6"></div>
+    <div class="yellow-down down square" id="space5"></div>
+    <div class="green-down down square" id="space4"></div>
+    <div class="yellow-down down square" id="space3"></div>
+    <div class="green-down down square" id="space2"></div>
+    <div class="yellow-down down square" id="space1"></div>
+    <div id="spaceGoal2" class="goal"></div>
+
+    <div class="yellow-up up square" id="space13"></div>
+    <div class="green-up up square" id="space14"></div>
+    <div class="yellow-up up square" id="space15"></div>
+    <div class="green-up up square" id="space16"></div>
+    <div class="yellow-up up square" id="space17"></div>
+    <div class="green-up up square" id="space18"></div>
+    <div id="space25" class="penalty"></div>
+
+    <div class="yellow-up up square" id="space19"></div>
+    <div class="green-up up square" id="space20"></div>
+    <div class="yellow-up up square" id="space21"></div>
+    <div class="green-up up square" id="space22"></div>
+    <div class="yellow-up up square" id="space23"></div>
+    <div class="green-up up square" id="space24"></div>
+    <div id="spaceGoal1" class="goal"></div>
+   </div>
+   <div id="dice">
+    <div class="dices" id="dice1"><i class="fa-solid fa-dice-one"></i></div>
+    <button type="button" class="btn btn-primary" id="rollDice">Roll Dice</button>
+    <div id="diceInstructions"></div>
+    <div class="dices" id="dice2"><i class="fa-solid fa-dice-one"></i></div>
+   </div>
+  </div>
+  <footer>(c) Tyler Hargrave 2022</footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/6c5ed91da2.js" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+ </body>
+</html>

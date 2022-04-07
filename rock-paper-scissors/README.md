@@ -1,5 +1,3 @@
-READ ME
-
 # Rock Paper Scissors
 
 ### Key Attributes

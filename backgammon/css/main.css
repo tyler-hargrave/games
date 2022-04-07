@@ -1,0 +1,359 @@
+/*------COLORS --------*/
+:root {
+ --color1: rgba(112, 173, 71, 1);
+ --text1: rgba(250, 250, 250, 1);
+ --color2: rgba(255, 192, 0, 1);
+ --text2: rgba(50, 50, 50, 1);
+ --p1: rgba(250, 250, 250, 1);
+ --p2: rgba(50, 50, 50, 1);
+ --hidden: rgba(50, 50, 50, 0);
+ --board: rgba(165, 42, 42, 1);
+ --box: #1c130f;
+}
+
+/*------DOCUMENT --------*/
+* {
+ box-sizing: border-box;
+}
+
+html,
+body {
+ margin: 0;
+ height: 100%;
+ background-color: var(--color2);
+}
+
+body {
+ display: grid;
+ grid-template-columns: 1fr;
+ grid-template-rows: 4rem 1fr 2rem;
+}
+
+.break {
+ width: 100%;
+ flex-basis: 100%;
+ height: 0;
+}
+
+.left {
+ text-align: left;
+}
+
+.right {
+ text-align: right;
+}
+
+h4 {
+ padding: 0;
+}
+
+.btn-primary,
+.btn-primary:hover {
+ background-color: var(--color1);
+ color: var(--text1);
+ border: 1px var(--text1) solid;
+}
+
+input {
+ border: 2px solid var(--color1);
+}
+
+h3 {
+  margin-top:5px;
+  margin-bottom: 5px;
+}
+
+/*------HEADER AND FOOTER --------*/
+
+header,
+footer {
+ background-color: var(--color1);
+ color: var(--text1);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.content {
+ background-color: var(--color2);
+ color: var(--text2);
+ display: flex;
+ flex-flow: row wrap;
+ justify-content: center;
+ align-items: start;
+}
+
+/*------DEFAULT LANDING PAGE--------*/
+#setup,
+#game {
+ display: none;
+}
+#landing {
+ display: grid;
+ grid-template-columns: 1fr;
+ grid-template-rows: 5rem 5rem 5rem 1fr;
+ text-align: center;
+ align-items: center;
+ padding: 1rem;
+}
+
+#landing img {
+ max-height: 10rem;
+ margin-left: auto;
+ margin-right: auto;
+}
+#landing * {
+ display: none;
+ font-size: xxx-large;
+}
+
+header h1 {
+ display: none;
+}
+
+/* Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 1000px) and (orientation: landscape) {
+ #landing {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 5rem 1fr;
+ }
+ #landing div {
+  grid-column: 1 / span 3;
+ }
+}
+
+/*------SETUP--------*/
+#setup {
+ grid-template-columns: 1fr 1fr;
+ grid-template-rows: 1fr 1fr 1fr;
+ padding: 2rem;
+}
+#setup > * {
+ padding: 1rem;
+}
+#setup .full {
+ grid-column: 1 / span 2;
+ text-align: center;
+}
+
+#setup * {
+ align-self: center;
+}
+
+#personP1 {
+ color: var(--p1);
+ border: solid var(--p1) 2px;
+}
+#personP2,
+#computerP2 {
+ color: var(--p2);
+ border: solid var(--p2) 2px;
+}
+
+#computerP2:hover,
+#personP2:hover {
+ cursor: pointer;
+}
+
+i {
+ padding: 0.3rem;
+}
+
+/*----------GAME BOARD----------*/
+#game {
+ display: none;
+ grid-template-columns: 3;
+ grid-template-rows: 1;
+}
+/* Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 1000px) and (orientation: landscape) {
+ #game {
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr;
+ }
+}
+#game * {
+ align-self: stretch;
+}
+
+#game #board {
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+ grid-template-rows: 1fr 1fr;
+ text-orientation: upright;
+ align-items: center;
+ border: 1rem solid var(--box);
+ margin: 2rem;
+ background-color: var(--board);
+}
+
+#game #board div {
+ align-self: stretch;
+ justify-self: stretch;
+ background-color: var(--board);
+}
+
+.square {
+ background-color: var(--board);
+ background-size: 100% 100%;
+ background-repeat: no-repeat;
+ border: 2px solid var(--board);
+}
+.down {
+ padding-bottom: 1rem;
+ margin-bottom: 1rem;
+ display: flex;
+ flex-flow: column;
+ justify-content: start;
+}
+.up {
+ padding-top: 1rem;
+ margin-top: 1rem;
+ display: flex;
+ flex-flow: column;
+ justify-content: end;
+}
+.down *,
+.up * {
+ background-color: none;
+}
+.green-down {
+ background-image: url("../img/green_down.png");
+}
+.green-up {
+ background-image: url("../img/green_up.png");
+}
+.yellow-down {
+ background-image: url("../img/yellow_down.png");
+}
+.yellow-up {
+ background-image: url("../img/yellow_up.png");
+}
+
+/*----------GAME BOARD----------*/
+#dice {
+ display: flex;
+ flex-flow: row wrap;
+ justify-content: center;
+ align-items: center;
+}
+/* Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 1000px) and (orientation: landscape) {
+  #dice {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.dices {
+ font-size: 7rem;
+ padding: 0px;
+ margin: 0px;
+ justify-content: center;
+ display: flex;
+ align-items: center;
+ margin-top: auto;
+ margin-bottom: auto;
+}
+#dice * {
+  align-self:auto;
+}
+
+#diceInstructions {
+ display: flex;
+ flex-flow: column;
+ align-items: center;
+ justify-content: center;
+ font-weight: bold;
+}
+
+#game #board * .p1 {
+ background-color: none;
+ color: var(--p1);
+ margin-left: auto;
+ margin-right: auto;
+}
+#game #board * .p2 {
+ background-color: none;
+ color: var(--p2);
+ margin-left: auto;
+ margin-right: auto;
+}
+#newGame{
+  border: 2px solid var(--board);
+  background-color: var(--color1);
+  color: var(--color2);
+}
+
+@keyframes blink {
+ 50% {
+   border-color: var(--color2)
+ }
+}
+@keyframes blink0 {
+  50% {
+    border-color: var(--color1)
+  }
+}
+.moveAvailable {
+ border: 2px solid var(--board);
+ animation: blink 1s step-end infinite;
+}
+.targetAvailable {
+  border: 2px solid var(--board);
+  animation: blink0 1s step-end infinite;
+}
+.penalty,
+.goal {
+  background-color: var(--board);
+  border: 1rem solid var(--box);
+  min-width: 4rem;
+}
+#spaceGoal1{
+  flex-direction: column-reverse;
+}
+#spaceGoal2 {
+  flex-direction: column;
+}
+
+/*----------PLAYERS---------*/
+#players{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+/* Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 1000px) and (orientation: landscape) {
+  #players {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
+.playerDetails{
+  margin: 5px;
+  overflow: hidden;
+  border-radius: 5px;
+    background-color:var(--color1);
+    border: 5px solid var(--color1);
+    text-align:center;
+    padding: 2px;
+}
+#playerDetails1{
+  color:var(--p1);
+
+}
+#playerDetails2 {
+  color: var(--p2);
+}
+@keyframes blinkPlayer {
+  50% {
+    border-color: var(--board)
+  }
+}
+.myTurn {
+  border: 5px solid var(--color1);
+  animation: blinkPlayer 1s step-end infinite;
+}
