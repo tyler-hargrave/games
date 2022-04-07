@@ -86,7 +86,8 @@ footer {
 
 /*------DEFAULT LANDING PAGE--------*/
 #setup,
-#game {
+#game,
+#champion {
   display: none;
 }
 
@@ -399,4 +400,16 @@ header h1 {
 .myTurn {
   border: 5px solid var(--color1);
   animation: blinkPlayer 1s step-end infinite;
+}
+
+/*----------CHAMPION--------*/
+#champion {
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./img/champion.webp");
+  background-color: var(--color2);
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }

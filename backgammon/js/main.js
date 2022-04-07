@@ -7,7 +7,7 @@ let spaceHTML = {};
 for (let player = 1; player <= 2; player++) {
  for (let i = 1; i <= NUM_CHECKERS; i++) {
   let thisHTML = "";
-  for (let j = 1; j <= Math.min(i - 1, 4); j++) {
+  for (let j = 1; j <= Math.min(i - 1, 5); j++) {
    thisHTML += '<i class="p' + player + ' fa-solid fa-circle"></i>';
   }
   if (i <= 5) thisHTML += '<i class="p' + player + ' fa-solid fa-circle"></i>';
@@ -34,6 +34,7 @@ state.dice4 = 0;
 const $landing = $("#landing");
 const $setup = $("#setup");
 const $game = $("#game");
+const $champion = $("#champion");
 
 const $players = $("#players");
 const $playerName1 = $("#playerName1");
@@ -57,14 +58,16 @@ const $rollDice = $("#rollDice");
 const $diceInstructions = $("#diceInstructions");
 $diceInstructions.hide();
 
+const $championName = $("#championName");
+
 /*----- EVENT LISTENERS-----*/
-$inputP1.change((e) => {
- state.p1 === e.target.value;
+$inputP1.on("change", (e) => {
+ state.p1 = $inputP1.val();
 });
 $computerP2.click(toggleP2);
 $personP2.click(toggleP2);
 $inputP2.change((e) => {
- state.p2 === e.target.value;
+ state.p2 = $inputP2.val();
 });
 $startGame.click(startGame);
 $rollDice.click(rollDice);
@@ -278,24 +281,18 @@ function findMoves(space, dice, allowPastGoal = false) {
  return -1;
 }
 function finishGame() {
+ $game.hide();
+ $champion.show();
+
  //Dice Instructions
- if (state.score1 === 0) $diceInstructions.html("<h2>WINNER!<br/>" + state.p1 + "</h2>");
- else $diceInstructions.html("<h2>WINNER!<br/>" + state.p2 + "</h2>");
-
- //Retry Button
- $diceInstructions.html($diceInstructions.html() + "<br/><button id='newGame' >New Game </button>");
- $("#newGame").click(() => location.reload());
-
- $dice1.html("");
- $dice2.html("");
- $rollDice.hide();
- $diceInstructions.show();
- $(".myTurn").removeClass("myTurn");
+ if (state.score1 === 0) $championName.html(state.p1);
+ else $championName.html(state.p1);
 }
 function landingPage() {
  //initial display
  $setup.css("display", "grid").hide();
  $game.css("display", "grid").hide();
+ $champion.css("display", "flex").hide();
 
  //fade in and then fade out to the setup
  let time = 1000;
@@ -497,6 +494,7 @@ function updateBoard() {
  $playerName2.html(state.p2);
 }
 function updateScore() {
+ console.log("updateScore");
  for (i = 1; i <= 2; i++) {
   state["score" + i] = 0;
   state["endGame" + i] = true;
@@ -525,6 +523,7 @@ function updateScore() {
  if (state.score1 < state.score2) $crown1.show();
  if (state.score1 > state.score2) $crown2.show();
 
+ console.log(state.score1, state.score2);
  if (Math.min(state.score1, state.score2) === 0) finishGame();
 }
 function updateTypeP2() {
