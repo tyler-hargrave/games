@@ -522,8 +522,8 @@ function updateScore() {
  $movesRemaining2.html(state.score2);
  $crown1.hide();
  $crown2.hide();
- if (state.score1 <= state.score2) $crown1.show();
- if (state.score1 >= state.score2) $crown2.show();
+ if (state.score1 < state.score2) $crown1.show();
+ if (state.score1 > state.score2) $crown2.show();
 
  if (Math.min(state.score1, state.score2) === 0) finishGame();
 }
