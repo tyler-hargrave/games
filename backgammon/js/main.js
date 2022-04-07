@@ -166,51 +166,6 @@ function completeMove() {
  //startTurn again (i.e. with less dice)
  startTurn();
 }
-function landingPage() {
- //initial display
- $setup.css("display", "grid").hide();
- $game.css("display", "grid").hide();
-
- //fade in and then fade out to the setup
- let time = 100;
- let j = 1;
- for (let i = 1; i <= 10; i++) {
-  setTimeout(() => {
-   $("#landing *:nth-child(" + j + ")").fadeIn(2 * time);
-   j++;
-  }, i * time);
-  if (i === 6) {
-   setTimeout(() => {
-    $landing.fadeOut(time);
-   }, i * time);
-  }
-  if (i === 7) {
-   setTimeout(() => {
-    $setup.fadeIn(time);
-    $header.fadeIn(time);
-   }, i * time);
-  }
- }
-
- //complete
-}
-function newGame() {
- //SETUP BOARD
- state.board1 = {
-  1: 2,
-  12: 5,
-  17: 3,
-  19: 5,
- };
- state.board2 = {
-  24: 2,
-  13: 5,
-  8: 3,
-  6: 5,
- };
- updateBoard();
- updateScore();
-}
 function findAllMoves(allowPastGoal = false) {
  result = {};
  //Penalty
@@ -336,6 +291,51 @@ function finishGame() {
  $rollDice.hide();
  $diceInstructions.show();
  $(".myTurn").removeClass("myTurn");
+}
+function landingPage() {
+ //initial display
+ $setup.css("display", "grid").hide();
+ $game.css("display", "grid").hide();
+
+ //fade in and then fade out to the setup
+ let time = 100;
+ let j = 1;
+ for (let i = 1; i <= 10; i++) {
+  setTimeout(() => {
+   $("#landing *:nth-child(" + j + ")").fadeIn(2 * time);
+   j++;
+  }, i * time);
+  if (i === 6) {
+   setTimeout(() => {
+    $landing.fadeOut(time);
+   }, i * time);
+  }
+  if (i === 7) {
+   setTimeout(() => {
+    $setup.fadeIn(time);
+    $header.fadeIn(time);
+   }, i * time);
+  }
+ }
+
+ //complete
+}
+function newGame() {
+ //SETUP BOARD
+ state.board1 = {
+  1: 2,
+  12: 5,
+  17: 3,
+  19: 5,
+ };
+ state.board2 = {
+  24: 2,
+  13: 5,
+  8: 3,
+  6: 5,
+ };
+ updateBoard();
+ updateScore();
 }
 function rollDice() {
  let time = 100;
@@ -533,6 +533,8 @@ function updateTypeP2() {
  if (state.typeP2 === "computer") $computerP2.css("color", "var(--p2)");
  else $personP2.css("color", "var(--p2)");
 }
+
+/*-----RENDER-----*/
 function render() {
  landingPage();
  updateTypeP2();
