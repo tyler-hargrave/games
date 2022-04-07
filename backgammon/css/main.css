@@ -407,7 +407,7 @@ header h1 {
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  background-image: url("./img/champion.webp");
+  background-image: url("../img/champion.webp");
   background-color: var(--color2);
   background-size: auto 100%;
   background-repeat: no-repeat;

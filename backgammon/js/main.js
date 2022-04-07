@@ -287,6 +287,10 @@ function finishGame() {
  //Dice Instructions
  if (state.score1 === 0) $championName.html(state.p1);
  else $championName.html(state.p1);
+
+ $("#newGame").click(() => {
+  location.reload();
+ });
 }
 function landingPage() {
  //initial display
