@@ -172,7 +172,7 @@ function landingPage() {
  $game.css("display", "grid").hide();
 
  //fade in and then fade out to the setup
- let time = 100;
+ let time = 1000;
  let j = 1;
  for (let i = 1; i <= 10; i++) {
   setTimeout(() => {
@@ -338,7 +338,7 @@ function finishGame() {
  $(".myTurn").removeClass("myTurn");
 }
 function rollDice() {
- let time = 100;
+ let time = 1000;
  $rollDice.attr("disabled", true);
 
  //SHOW A NICE PICTURE
