@@ -1,21 +1,38 @@
-# Rock Paper Scissors
+# Backgammon ("Back 2 Gamin'")
 
 ### Key Attributes
 
-Date: 2022-Mar-15
+Date: 2022-Apr-6
 
 Author Tyler Hargrave
 
 ### Introduction
 
-This is a simple game that was developed as part of a software engineering course. The purpose of this game was to work on javascript functions in an HTML game. Sorry about the colour scheme.
+This is a relatively complicated DOM based game. Backgammon is a legendary game; but people rarely have a board playing around so this lets you play with a friend on the subway or against the computer. Admittedly the computer is not that clever!
 
-### Development Objectives
+### Screenshots
 
-CSS Flexbox The game was developed with CSS flexbox
+![Home Page](/img/screenshot1.jpg "Landing Page")
+![Setup Page](/img/screenshot2.jpg "Setup Page")
+![Game Page](/img/screenshot3.jpg "Game Page")
+![Champion Page](/img/screenshot4.jpg "Champion Page")
 
-Vanilla JS: The game does not use any libraries and focuses on JS fundamentals.
+### Technologies
 
-### Instructions
+CSS: Including Flexbox, Grid, and Keyframes (animation)
 
-The game is a simple Tic-Tac-Toe for two computer players. If you want to play with your friends; pick a player and click play. The game tracks the number of Wins for each player and ties, but doesn't use any backend or storage so once you refresh it restarts.
+JS: Including Jquery for DOM manipulation
+
+HTML
+
+(frontend only)
+
+### Getting Started
+
+https://tyler-hargrave.github.io/games/backgammon/
+
+https://www.bkgm.com/rules.html
+
+### Continued Development
+
+To continue the development of this game the computer player can be improved. As of now he (Frank) will make random moves. With any strategy you should be able to beat him; however if we start running some machine learning then maybe he will beat you in the future.
